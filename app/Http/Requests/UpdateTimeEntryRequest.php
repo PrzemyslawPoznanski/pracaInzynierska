@@ -17,6 +17,10 @@ class UpdateTimeEntryRequest extends FormRequest
     public function rules()
     {
         return [
+            'work_type_id' => [
+                'required',
+                'integer',
+            ],
             'start_time' => [
                 'required',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
