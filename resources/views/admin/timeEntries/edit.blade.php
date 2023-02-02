@@ -11,8 +11,8 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="work_type_id">{{ trans('cruds.timeEntry.fields.work_type') }}</label>
-                <select class="form-control select2 {{ $errors->has('work_type') ? 'is-invalid' : '' }}" name="work_type_id" id="work_type_id">
+                <label class="required" for="work_type_id">{{ trans('cruds.timeEntry.fields.work_type') }}</label>
+                <select class="form-control select2 {{ $errors->has('work_type') ? 'is-invalid' : '' }}" name="work_type_id" id="work_type_id" required>
                     @foreach($work_types as $id => $entry)
                         <option value="{{ $id }}" {{ (old('work_type_id') ? old('work_type_id') : $timeEntry->work_type->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach
