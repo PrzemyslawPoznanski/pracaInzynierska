@@ -67,15 +67,6 @@
                 <span class="help-block">{{ trans('cruds.task.fields.tag_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="attachment">{{ trans('cruds.task.fields.attachment') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('attachment') ? 'is-invalid' : '' }}" id="attachment-dropzone">
-                </div>
-                @if($errors->has('attachment'))
-                    <span class="text-danger">{{ $errors->first('attachment') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.task.fields.attachment_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="due_date">{{ trans('cruds.task.fields.due_date') }}</label>
                 <input class="form-control date {{ $errors->has('due_date') ? 'is-invalid' : '' }}" type="text" name="due_date" id="due_date" value="{{ old('due_date') }}">
                 @if($errors->has('due_date'))
@@ -118,57 +109,4 @@
 
 
 
-@endsection
-
-@section('scripts')
-<script>
-    Dropzone.options.attachmentDropzone = {
-    url: '{{ route('admin.tasks.storeMedia') }}',
-    maxFilesize: 2, // MB
-    maxFiles: 1,
-    addRemoveLinks: true,
-    headers: {
-      'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    },
-    params: {
-      size: 2
-    },
-    success: function (file, response) {
-      $('form').find('input[name="attachment"]').remove()
-      $('form').append('<input type="hidden" name="attachment" value="' + response.name + '">')
-    },
-    removedfile: function (file) {
-      file.previewElement.remove()
-      if (file.status !== 'error') {
-        $('form').find('input[name="attachment"]').remove()
-        this.options.maxFiles = this.options.maxFiles + 1
-      }
-    },
-    init: function () {
-@if(isset($task) && $task->attachment)
-      var file = {!! json_encode($task->attachment) !!}
-          this.options.addedfile.call(this, file)
-      file.previewElement.classList.add('dz-complete')
-      $('form').append('<input type="hidden" name="attachment" value="' + file.file_name + '">')
-      this.options.maxFiles = this.options.maxFiles - 1
-@endif
-    },
-     error: function (file, response) {
-         if ($.type(response) === 'string') {
-             var message = response //dropzone sends it's own error messages in string
-         } else {
-             var message = response.errors.file
-         }
-         file.previewElement.classList.add('dz-error')
-         _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
-         _results = []
-         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-             node = _ref[_i]
-             _results.push(node.textContent = message)
-         }
-
-         return _results
-     }
-}
-</script>
 @endsection

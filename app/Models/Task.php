@@ -9,15 +9,11 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Task extends Model implements HasMedia
+class Task extends Model
 {
     use SoftDeletes;
     use MultiTenantModelTrait;
-    use InteractsWithMedia;
     use Auditable;
     use HasFactory;
 
@@ -29,10 +25,6 @@ class Task extends Model implements HasMedia
     ];
 
     public $table = 'tasks';
-
-    protected $appends = [
-        'attachment',
-    ];
 
     protected $dates = [
         'due_date',
@@ -54,12 +46,6 @@ class Task extends Model implements HasMedia
         'created_by_id',
     ];
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('thumb')->fit('crop', 50, 50);
-        $this->addMediaConversion('preview')->fit('crop', 120, 120);
-    }
-
     public function taskTaskProgresss()
     {
         return $this->hasMany(TaskProgress::class, 'task_id', 'id');
@@ -73,11 +59,6 @@ class Task extends Model implements HasMedia
     public function tags()
     {
         return $this->belongsToMany(TaskTag::class);
-    }
-
-    public function getAttachmentAttribute()
-    {
-        return $this->getMedia('attachment')->last();
     }
 
     public function getDueDateAttribute($value)

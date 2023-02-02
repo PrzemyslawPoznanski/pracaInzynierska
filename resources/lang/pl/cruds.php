@@ -159,8 +159,6 @@ return [
             'status_helper'        => ' ',
             'tag'                  => 'Tags',
             'tag_helper'           => ' ',
-            'attachment'           => 'Attachment',
-            'attachment_helper'    => ' ',
             'due_date'             => 'Due date',
             'due_date_helper'      => ' ',
             'assigned_to'          => 'Assigned to',
