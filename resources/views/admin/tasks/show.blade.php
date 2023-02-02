@@ -67,18 +67,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.task.fields.attachment') }}
-                        </th>
-                        <td>
-                            @if($task->attachment)
-                                <a href="{{ $task->attachment->getUrl() }}" target="_blank">
-                                    {{ trans('global.view_file') }}
-                                </a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.task.fields.due_date') }}
                         </th>
                         <td>
