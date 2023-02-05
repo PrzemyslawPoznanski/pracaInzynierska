@@ -34,9 +34,11 @@
                         <th>
                             {{ trans('cruds.task.fields.task_severity') }}
                         </th>
+                        @can('user_visibility_restricted')
                         <th>
                             {{ trans('cruds.task.fields.tag') }}
                         </th>
+                        @endcan
                         <th>
                             {{ trans('cruds.task.fields.due_date') }}
                         </th>
@@ -69,11 +71,13 @@
                             <td>
                                 {{ App\Models\Task::TASK_SEVERITY_SELECT[$task->task_severity] ?? '' }}
                             </td>
+                            @can('user_visibility_restricted')
                             <td>
                                 @foreach($task->tags as $key => $item)
                                     <span class="badge badge-info">{{ $item->name }}</span>
                                 @endforeach
                             </td>
+                            @endcan
                             <td>
                                 {{ $task->due_date ?? '' }}
                             </td>
@@ -162,7 +166,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

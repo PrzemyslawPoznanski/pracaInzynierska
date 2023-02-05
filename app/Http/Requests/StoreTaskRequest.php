@@ -22,10 +22,6 @@ class StoreTaskRequest extends FormRequest
                 'required',
                 'unique:tasks',
             ],
-            'status_id' => [
-                'required',
-                'integer',
-            ],
             'task_severity' => [
                 'required',
             ],

@@ -169,7 +169,7 @@ return [
             'updated_at_helper'    => ' ',
             'deleted_at'           => 'Deleted At',
             'deleted_at_helper'    => ' ',
-            'created_by'           => 'Refers to',
+            'created_by'           => 'Refers to (entry visible to this user)',
             'created_by_helper'    => ' ',
             'task_severity'        => 'Task Severity',
             'task_severity_helper' => ' ',
@@ -275,8 +275,8 @@ return [
         ],
     ],
     'contactContact' => [
-        'title'          => 'Contacts',
-        'title_singular' => 'Contact',
+        'title'          => 'Customers',
+        'title_singular' => 'Customer',
         'fields'         => [
             'id'                        => 'ID',
             'id_helper'                 => ' ',

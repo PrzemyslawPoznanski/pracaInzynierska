@@ -25,9 +25,10 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.description_helper') }}</span>
             </div>
+            @can('user_visibility_restricted')
             <div class="form-group">
-                <label class="required" for="status_id">{{ trans('cruds.task.fields.status') }}</label>
-                <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status_id" id="status_id" required>
+                <label for="status_id">{{ trans('cruds.task.fields.status') }}</label>
+                <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status_id" id="status_id">
                     @foreach($statuses as $id => $entry)
                         <option value="{{ $id }}" {{ old('status_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach
@@ -37,6 +38,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.status_helper') }}</span>
             </div>
+            @endcan
             <div class="form-group">
                 <label class="required">{{ trans('cruds.task.fields.task_severity') }}</label>
                 <select class="form-control {{ $errors->has('task_severity') ? 'is-invalid' : '' }}" name="task_severity" id="task_severity" required>
@@ -50,6 +52,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.task_severity_helper') }}</span>
             </div>
+            @can('user_visibility_restricted')
             <div class="form-group">
                 <label for="tags">{{ trans('cruds.task.fields.tag') }}</label>
                 <div style="padding-bottom: 4px">
@@ -66,6 +69,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.tag_helper') }}</span>
             </div>
+            @endcan
             <div class="form-group">
                 <label for="due_date">{{ trans('cruds.task.fields.due_date') }}</label>
                 <input class="form-control date {{ $errors->has('due_date') ? 'is-invalid' : '' }}" type="text" name="due_date" id="due_date" value="{{ old('due_date') }}">
@@ -74,6 +78,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.due_date_helper') }}</span>
             </div>
+            @can('user_visibility_restricted')
             <div class="form-group">
                 <label for="assigned_to_id">{{ trans('cruds.task.fields.assigned_to') }}</label>
                 <select class="form-control select2 {{ $errors->has('assigned_to') ? 'is-invalid' : '' }}" name="assigned_to_id" id="assigned_to_id">
@@ -98,6 +103,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.task.fields.created_by_helper') }}</span>
             </div>
+            @endcan
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

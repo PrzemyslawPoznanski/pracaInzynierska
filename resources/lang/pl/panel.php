@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'Dy\'namo',
+    'site_title' => 'Dynamo',
 ];

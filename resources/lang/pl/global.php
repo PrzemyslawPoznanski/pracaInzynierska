@@ -77,7 +77,7 @@ return [
         'excel'         => 'Excel',
         'pdf'           => 'PDF',
         'print'         => 'Drukuj',
-        'colvis'        => 'Widoczność kolumny',
+        'colvis'        => 'Filtrowanie',
         'delete'        => 'Skasuj zaznaczone',
         'zero_selected' => 'Nie zaznaczono wierszy',
     ],

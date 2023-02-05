@@ -77,7 +77,7 @@ return [
         'excel'         => 'Excel',
         'pdf'           => 'PDF',
         'print'         => 'Print',
-        'colvis'        => 'Columns',
+        'colvis'        => 'Filter',
         'delete'        => 'Delete selected',
         'zero_selected' => 'No rows selected',
     ],

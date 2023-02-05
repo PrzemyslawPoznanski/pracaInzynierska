@@ -52,28 +52,8 @@
                                 {{ $taskProgress->created_at ?? '' }}
                             </td>
                             <td>
-                                @can('task_progress_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.task-progresss.show', $taskProgress->id) }}">
-                                        {{ trans('global.view') }}
-                                    </a>
-                                @endcan
-
-                                @can('task_progress_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.task-progresss.edit', $taskProgress->id) }}">
-                                        {{ trans('global.edit') }}
-                                    </a>
-                                @endcan
-
-                                @can('task_progress_delete')
-                                    <form action="{{ route('admin.task-progresss.destroy', $taskProgress->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                    </form>
-                                @endcan
 
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>
@@ -130,7 +110,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

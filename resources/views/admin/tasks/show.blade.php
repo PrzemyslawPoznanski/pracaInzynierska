@@ -55,6 +55,7 @@
                             {{ App\Models\Task::TASK_SEVERITY_SELECT[$task->task_severity] ?? '' }}
                         </td>
                     </tr>
+                    @can('user_visibility_restricted')
                     <tr>
                         <th>
                             {{ trans('cruds.task.fields.tag') }}
@@ -65,6 +66,7 @@
                             @endforeach
                         </td>
                     </tr>
+                    @endcan
                     <tr>
                         <th>
                             {{ trans('cruds.task.fields.due_date') }}
@@ -89,6 +91,7 @@
                             {{ $task->created_at }}
                         </td>
                     </tr>
+                    @can('user_visibility_restricted')
                     <tr>
                         <th>
                             {{ trans('cruds.task.fields.created_by') }}
@@ -97,6 +100,7 @@
                             {{ $task->created_by->name ?? '' }}
                         </td>
                     </tr>
+                        @endcan
                 </tbody>
             </table>
             <div class="form-group">
