@@ -110,8 +110,8 @@ return [
         ],
     ],
     'taskManagement' => [
-        'title'          => 'Zarządzanie zadaniami',
-        'title_singular' => 'Zarządzanie zadaniem',
+        'title'          => 'Zgłoszenia',
+        'title_singular' => 'Zgłoszenie',
     ],
     'taskStatus' => [
         'title'          => 'Statusy',
@@ -238,8 +238,8 @@ return [
         ],
     ],
     'timeReport' => [
-        'title'          => 'Miesięczny raport',
-        'title_singular' => 'Miesięczny raport',
+        'title'          => 'Raport',
+        'title_singular' => 'Raport',
         'reports'        => [
             'title'             => 'Raporty',
             'title_singular'    => 'Raport',

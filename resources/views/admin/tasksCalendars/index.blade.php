@@ -32,7 +32,7 @@
                             {
                                 title : '{{ $event->name }}',
                                 start : '{{ \Carbon\Carbon::createFromFormat(config('panel.date_format'),$event->due_date)->format('Y-m-d') }}',
-                                url : '{{ url('admin/tasks').'/'.$event->id.'/edit' }}'
+                                url : '{{ url('admin/tasks').'/'.$event->id }}'
                             },
 @endif
 @endforeach
