@@ -22,10 +22,6 @@ class UpdateTaskRequest extends FormRequest
                 'required',
                 'unique:tasks,name,' . request()->route('task')->id,
             ],
-            'status_id' => [
-                'required',
-                'integer',
-            ],
             'task_severity' => [
                 'required',
             ],
