@@ -35,8 +35,8 @@
 
             <!-- Right navbar links -->
             @if(count(config('panel.available_languages', [])) > 1)
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropright dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             {{ strtoupper(app()->getLocale()) }}
                         </a>
@@ -48,8 +48,8 @@
                     </li>
                 </ul>
             @endif
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown notifications-menu">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown dropright notifications-menu">
                     <a href="#" class="nav-link" data-toggle="dropdown">
                         <i class="far fa-bell"></i>
                         @php($alertsCount = \Auth::user()->userUserAlerts()->where('read', false)->count())
