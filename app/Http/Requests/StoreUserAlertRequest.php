@@ -19,6 +19,7 @@ class StoreUserAlertRequest extends FormRequest
         return [
             'alert_text' => [
                 'string',
+                'max:32',
                 'required',
             ],
             'alert_link' => [
