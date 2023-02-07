@@ -60,7 +60,7 @@ return [
     'saved'                          => 'Zapisano.',
     'profile_information'            => 'O profilu',
     'all_messages'                   => 'Wszystkie wiadomości',
-    'new_message'                    => 'Nowa wiadomośc',
+    'new_message'                    => 'Nowa wiadomość',
     'messages'                       => 'Wiadomości',
     'inbox'                          => 'Skrzynka odbiorcza',
     'outbox'                         => 'Skrzynka nadawcza',
@@ -322,4 +322,9 @@ return [
     'leave'                          => 'Opuść',
     'calendar'                       => 'Kalendarz',
     'messenger'                      => 'Wiadomości',
+    'dashboard_chart1_title'         => 'Lista zgłoszeń',
+    'dashboard_chart2_title'         => 'Aktualizacje zgłoszeń',
+    'dashboard_chart3_title'         => 'Licznik aktualizacji',
+    'low_severity'                   => 'Niski priorytet',
+    'welcome'                        => 'Witaj, '
 ];

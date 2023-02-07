@@ -18,7 +18,7 @@
                     <div class="row">
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
-                            <h3>{{ $settings1['chart_title'] }}</h3>
+                            <h3>{{ trans('global.dashboard_chart1_title') }}</h3>
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -48,7 +48,7 @@
                                         </tr>
                                         @empty
                                         <tr>
-                                            <td colspan="{{ count($settings1['fields']) }}">{{ __('No entries found') }}</td>
+                                            <td colspan="{{ count($settings1['fields']) }}">{{ trans('global.no_entries_in_table') }}</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -57,7 +57,7 @@
 
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings2['column_class'] }}" style="overflow-x: auto;">
-                            <h3>{{ $settings2['chart_title'] }}</h3>
+                            <h3>{{ trans('global.dashboard_chart2_title') }}</h3>
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -87,7 +87,7 @@
                                         </tr>
                                         @empty
                                         <tr>
-                                            <td colspan="{{ count($settings2['fields']) }}">{{ __('No entries found') }}</td>
+                                            <td colspan="{{ count($settings2['fields']) }}">{{ trans('global.no_entries_in_table') }}</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="{{ $chart3->options['column_class'] }}">
-                            <h3>{!! $chart3->options['chart_title'] !!}</h3>
+                            <h3>{{ trans('global.dashboard_chart3_title') }}</h3>
                             {!! $chart3->renderHtml() !!}
                         </div>
                     </div>

@@ -322,4 +322,9 @@ return [
     'leave'                          => 'Leave',
     'calendar'                       => 'Calendar',
     'messenger'                      => 'Messenger',
+    'chart_title'                    => 'Task list',
+    'dashboard_chart1_title'         => 'Task list',
+    'dashboard_chart2_title'         => 'Task updates',
+    'dashboard_chart3_title'         => 'Updates counter',
+    'welcome'                        => 'Welcome, '
 ];

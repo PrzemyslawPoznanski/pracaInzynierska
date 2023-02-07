@@ -1,13 +1,11 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="#" class="brand-link ">
         <span class="brand-text font-weight-light">{{ trans('panel.site_title') }}</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user (optional) -->
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

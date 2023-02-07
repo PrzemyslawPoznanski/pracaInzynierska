@@ -2,12 +2,9 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-        <div class="login-logo">
-            <a href="#">
-                {{ trans('panel.site_title') }}
-            </a>
-        </div>
+        <img width="350px" src="{{ asset('images/Logo.png')}}">
     </div>
+
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">{{ trans('global.register') }}</p>

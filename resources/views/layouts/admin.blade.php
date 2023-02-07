@@ -32,7 +32,13 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
             </ul>
-
+            <ul class="nav nav-sidebar" >
+                <a class="nav-link">
+                    <p>
+                        {{ trans('global.welcome') }} {{$user = Auth::user()->name}}
+                    </p>
+                </a>
+            </ul>
             <!-- Right navbar links -->
             @if(count(config('panel.available_languages', [])) > 1)
                 <ul class="navbar-nav">
@@ -106,8 +112,8 @@
             <!-- /.content -->
         </div>
 
-        <footer class="main-footer">
-            <strong> &copy;</strong> <b>Dynamo</b> +48 123 654 789
+        <footer class="main-footer bg-secondary">
+            <img width="25px" src="{{ asset('images/smallLogo.png')}}" > <b>Dynamo</b> +48 123 654 789
         </footer>
         <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
